@@ -14,4 +14,4 @@ client_scripts {
 	'client/main.lua'
 }
 
-dependency 'qb-core'
+dependency 'qbr-core'

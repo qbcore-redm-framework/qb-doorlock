@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['qbr-core']:GetCoreObject()
 local CoolDown = 0
 
 Citizen.CreateThread(function()
@@ -91,7 +91,7 @@ Citizen.CreateThread(function()
 					if IsControlJustPressed(0,Config.KeyPress) and CoolDown < 1 then
 						CoolDown = 1000
 						local state = not doorID.locked
-						TriggerServerEvent("qb-doorlock:updatedoorsv", GetPlayerServerId(), k, state)
+						TriggerServerEvent("qbr-doorlock:updatedoorsv", GetPlayerServerId(), k, state)
 					end
 				end
 			end
@@ -107,8 +107,8 @@ Citizen.CreateThread(function()
 	end
 end)
 
-RegisterNetEvent('qb-doorlock:changedoor')
-AddEventHandler('qb-doorlock:changedoor', function(doorID, state)
+RegisterNetEvent('qbr-doorlock:changedoor')
+AddEventHandler('qbr-doorlock:changedoor', function(doorID, state)
 	ChangeStateText(Config.DoorList[doorID].textCoords, state)
 	prop_name = 'P_KEY02X'
 	local ped = PlayerPedId()
@@ -139,7 +139,7 @@ AddEventHandler('qb-doorlock:changedoor', function(doorID, state)
 			Wait(750)
 		AttachEntityToEntity(prop, ped,boneIndex, 0.02, 0.0120, -0.00850, 0.024, -160.0, 200.0, true, true, false, true, 1, true)
 			Wait(250)
-		TriggerServerEvent('qb-doorlock:updateState', doorID, state, function(cb) end)
+		TriggerServerEvent('qbr-doorlock:updateState', doorID, state, function(cb) end)
 			Wait(1500)
 		ClearPedSecondaryTask(ped)
 		DeleteObject(prop)
@@ -180,7 +180,7 @@ function DrawText3Ds(x, y, z, text)
 end
 
 -- Set state for a door
-RegisterNetEvent('qb-doorlock:setState')
-AddEventHandler('qb-doorlock:setState', function(doorID, state)
+RegisterNetEvent('qbr-doorlock:setState')
+AddEventHandler('qbr-doorlock:setState', function(doorID, state)
 	Config.DoorList[doorID].locked = state
 end)

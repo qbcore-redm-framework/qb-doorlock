@@ -1,2 +1,2 @@
-# qb-doorlock
+# qbr-doorlock
 Doorlock for RedM QBCore
