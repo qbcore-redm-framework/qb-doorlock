@@ -2,11 +2,11 @@ local QBCore = exports['qbr-core']:GetCoreObject()
 local DoorInfo	= {}
 
 RegisterServerEvent('qbr-doorlock:updatedoorsv')
-AddEventHandler('qbr-doorlock:updatedoorsv', function(source, doorID, state, cb)
+AddEventHandler('qbr-doorlock:updatedoorsv', function(doorID, state, cb)
     local src = source
 	local Player = QBCore.Functions.GetPlayer(src)
 	if not IsAuthorized(Player.PlayerData.job.name, Config.DoorList[doorID]) then
-			TriggerClientEvent('chatMessage', source, "", {0, 0, 200}, "^1You do not have a key!^0")
+		TriggerClientEvent('QBCore:Notify', src, 'You do not have a key!', 'error', 1500)
             return
         else 
             TriggerClientEvent('qbr-doorlock:changedoor', src, doorID, state)
