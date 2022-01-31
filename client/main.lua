@@ -91,7 +91,7 @@ Citizen.CreateThread(function()
 					if IsControlJustPressed(0,Config.KeyPress) and CoolDown < 1 then
 						CoolDown = 1000
 						local state = not doorID.locked
-						TriggerServerEvent("qbr-doorlock:updatedoorsv", GetPlayerServerId(), k, state)
+						TriggerServerEvent("qbr-doorlock:updatedoorsv", k, state)
 					end
 				end
 			end
