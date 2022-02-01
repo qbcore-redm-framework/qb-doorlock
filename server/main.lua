@@ -6,7 +6,7 @@ AddEventHandler('qbr-doorlock:updatedoorsv', function(doorID, state, cb)
     local src = source
 	local Player = QBCore.Functions.GetPlayer(src)
 	if not IsAuthorized(Player.PlayerData.job.name, Config.DoorList[doorID]) then
-		TriggerClientEvent('QBCore:Notify', src, 'You do not have a key!', 'error', 1500)
+		TriggerClientEvent('QBCore:Notify', src, Lang:t("error.nokey"), 'error', 1500)
             return
         else 
             TriggerClientEvent('qbr-doorlock:changedoor', src, doorID, state)
