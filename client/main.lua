@@ -33,7 +33,7 @@ Citizen.CreateThread(function()
 		for k,doorID in ipairs(Config.DoorList) do
 			local distance = #(playerCoords - doorID.textCoords)
 
-			local maxDistance, displayText = 1.25, 'unlocked'
+			local maxDistance, displayText = 1.25, Lang:t("info.unlocked")
 
 			if doorID.distance then
 				maxDistance = doorID.distance
@@ -152,10 +152,10 @@ function ChangeStateText(coords, state)
 		local Text = ""
 		local r,g,b = 0,0,0
 		if state == false then
-			Text =  "Unlocking"
+			Text =  Lang:t("info.unlocking")
 			r,g,b = 51, 153, 51
 		elseif state == true then
-			Text = 'Locking'
+			Text = Lang:t("info.locking")
 			r,g,b = 153, 1, 1
 		end
 		while timeout > 0 do
