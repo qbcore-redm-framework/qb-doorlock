@@ -7,6 +7,8 @@ server_scripts {
 }
 
 shared_scripts {
+	'@qbr-core/shared/locale.lua',
+    	'locales/de.lua',
 	'config.lua'
 }
 
