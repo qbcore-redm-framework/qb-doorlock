@@ -1,4 +1,4 @@
-local QBCore = exports['qbr-core']:GetCoreObject()
+
 local CoolDown = 0
 
 Citizen.CreateThread(function()
@@ -47,7 +47,7 @@ Citizen.CreateThread(function()
 						for _,v in ipairs(doorID.doors) do
 							if Citizen.InvokeNative(0x160AA1B32F6139B8, v.doorid) ~= 2 then
 								Citizen.InvokeNative(0xD99229FE93B46286, v.doorid,1,1,0,0,0,0)
-								Citizen.InvokeNative(0x6BAB9442830C7F53, v.doorid, 2) 
+								Citizen.InvokeNative(0x6BAB9442830C7F53, v.doorid, 2)
 							end
 							local current = GetEntityRotation(v.object).z - v.objYaw
 							if v.objYaw and current > 0.5 or current < -0.5 then
@@ -59,7 +59,7 @@ Citizen.CreateThread(function()
 						for _,v in ipairs(doorID.doors) do
 							if Citizen.InvokeNative(0x160AA1B32F6139B8, v.doorid) ~= false then
 								Citizen.InvokeNative(0xD99229FE93B46286, v.doorid,1,1,0,0,0,0)
-								Citizen.InvokeNative(0x6BAB9442830C7F53, v.doorid, 0) 
+								Citizen.InvokeNative(0x6BAB9442830C7F53, v.doorid, 0)
 							end
 						end
 						FreezeEntityPosition(doorID.object,false)
@@ -69,7 +69,7 @@ Citizen.CreateThread(function()
 					if doorID.locked then
 						if Citizen.InvokeNative(0x160AA1B32F6139B8, doorID.doorid) ~= 2 then
 							Citizen.InvokeNative(0xD99229FE93B46286, doorID.doorid,1,1,0,0,0,0)
-							Citizen.InvokeNative(0x6BAB9442830C7F53, doorID.doorid, 2) 
+							Citizen.InvokeNative(0x6BAB9442830C7F53, doorID.doorid, 2)
 						end
 						local current = GetEntityRotation(doorID.object).z - doorID.objYaw
 						if doorID.objYaw and current > 0.5 or current < -0.5 then
@@ -79,7 +79,7 @@ Citizen.CreateThread(function()
 					else
 						if Citizen.InvokeNative(0x160AA1B32F6139B8, doorID.doorid) ~= false then
 							Citizen.InvokeNative(0xD99229FE93B46286, doorID.doorid,1,1,0,0,0,0)
-							Citizen.InvokeNative(0x6BAB9442830C7F53, doorID.doorid, 0) 
+							Citizen.InvokeNative(0x6BAB9442830C7F53, doorID.doorid, 0)
 						end
 						FreezeEntityPosition(doorID.object,false)
 					end
@@ -169,7 +169,7 @@ end
 function DrawText3Ds(x, y, z, text)
     local onScreen,_x,_y=GetScreenCoordFromWorldCoord(x, y, z)
     local px,py,pz=table.unpack(GetGameplayCamCoord())
-	
+
     SetTextScale(0.35, 0.35)
     SetTextFontForCurrentCommand(1)
     SetTextColor(255, 255, 255, 215)

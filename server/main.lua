@@ -1,14 +1,14 @@
-local QBCore = exports['qbr-core']:GetCoreObject()
+
 local DoorInfo	= {}
 
 RegisterServerEvent('qbr-doorlock:updatedoorsv')
 AddEventHandler('qbr-doorlock:updatedoorsv', function(doorID, state, cb)
     local src = source
-	local Player = QBCore.Functions.GetPlayer(src)
+	local Player = exports['qbr-core']:GetPlayer(src)
 	if not IsAuthorized(Player.PlayerData.job.name, Config.DoorList[doorID]) then
 		TriggerClientEvent('QBCore:Notify', src, Lang:t("error.nokey"), 'error', 1500)
             return
-        else 
+        else
             TriggerClientEvent('qbr-doorlock:changedoor', src, doorID, state)
         end
 end)
@@ -16,7 +16,7 @@ end)
 RegisterServerEvent('qbr-doorlock:updateState')
 AddEventHandler('qbr-doorlock:updateState', function(doorID, state, cb)
     local src = source
-	local Player = QBCore.Functions.GetPlayer(src)
+	local Player = exports['qbr-core']:GetPlayer(src)
 	if type(doorID) ~= 'number' then
 			return
 		end
