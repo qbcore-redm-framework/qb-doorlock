@@ -6,7 +6,7 @@ AddEventHandler('qbr-doorlock:updatedoorsv', function(doorID, state, cb)
     local src = source
 	local Player = exports['qbr-core']:GetPlayer(src)
 	if not IsAuthorized(Player.PlayerData.job.name, Config.DoorList[doorID]) then
-		TriggerClientEvent('QBCore:Notify', src, Lang:t("error.nokey"), 'error', 1500)
+		TriggerClientEvent('QBCore:Notify', src, 9, Lang:t("error.nokey"), 2000, 0, 'mp_lobby_textures', 'cross')
             return
         else
             TriggerClientEvent('qbr-doorlock:changedoor', src, doorID, state)
