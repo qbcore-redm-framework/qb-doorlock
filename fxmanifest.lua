@@ -1,19 +1,17 @@
-fx_version "adamant"
-games {"rdr3"}
+fx_version "cerulean"
+game 'rdr3'
 rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aware my resources *will* become incompatible once RedM ships.'
 
-server_scripts {
-	'server/main.lua'
-}
+server_script 'server/main.lua'
 
 shared_scripts {
 	'@qbr-core/shared/locale.lua',
-    	'locales/en.lua',
+    'locales/en.lua',
 	'config.lua'
 }
 
-client_scripts {
-	'client/main.lua'
-}
+client_script 'client/main.lua'
 
 dependency 'qbr-core'
+
+lua54 'yes'
