@@ -1,7 +1,5 @@
 Config = {}
-
 Config.KeyPress = 0xCEFD9220
-
 Config.DoorList = {
 
 	--
@@ -151,6 +149,91 @@ Config.DoorList = {
 	},
 
 	-- --
+	-- -- Sisika Prison
+	-- --
+	{
+        authorizedJobs = { 'police' }, -- Main Gate Left Door
+        doorid = 1692000954,
+        objCoords  = vector3(3331.85, -700.07, 43.09),
+        textCoords  = vector3(3331.85, -700.07, 43.09),
+        objYaw = -47.99,
+        locked = true,
+        distance = 3
+    },
+    {
+        authorizedJobs = { 'police' }, -- Main Gate Right Door
+        doorid = -1819721708,
+        objCoords  = vector3(3333.60, -702.02, 43.09),
+        textCoords  = vector3(3333.60, -702.02, 43.09),
+        objYaw = -47.99,
+        locked = true,
+        distance = 3
+    },
+    {
+        authorizedJobs = { 'police' }, -- Side Gate North Interior Exit
+        doorid = 559643844,
+        objCoords  = vector3(3350.70, -648.00, 44.40),
+        textCoords  = vector3(3350.70, -648.00, 44.40),
+        objYaw = 14.99,
+        locked = true,
+        distance = 1.5
+    },
+    {
+        authorizedJobs = { 'police' }, -- Side Gate North Exterior Exit
+        doorid = 559643844,
+        objCoords  = vector3(3349.96, -645.28, 44.41),
+        textCoords  = vector3(3349.96, -645.28, 44.41),
+        objYaw = 14.99,
+        locked = true,
+        distance = 1.5
+    },
+    {
+        authorizedJobs = { 'police' }, -- NE Tower
+        doorid = 4249790129,
+        objCoords  = vector3(3384.6154785156, -639.47778320313, 45.466075897217),
+        textCoords  = vector3(3384.6154785156, -639.47778320313, 45.466075897217),
+        objYaw = -29.77,
+        locked = true,
+        distance = 1.5
+    },
+    {
+        authorizedJobs = { 'police' }, -- Central Tower
+        doorid = 559643844,
+        objCoords  = vector3(3366.45, -680.12, 45.49),
+        textCoords  = vector3(3366.45, -680.12, 45.49),
+        objYaw = -85.0,
+        locked = true,
+        distance = 1.5
+    },
+    {
+        authorizedJobs = { 'police' }, -- South Tower
+        doorid = 559643844,
+        objCoords  = vector3(3369.56, -723.59, 44.31),
+        textCoords  = vector3(3369.56, -723.59, 44.31),
+        objYaw = -179.43,
+        locked = true,
+        distance = 1.5
+    },
+    {
+        authorizedJobs = { 'police' }, -- East Tower
+        doorid = 559643844,
+        objCoords  = vector3(3407.31, -677.72, 45.50),
+        textCoords  = vector3(3407.31, -677.72, 45.50),
+        objYaw = -99.40,
+        locked = true,
+        distance = 1.5
+    },
+    {
+        authorizedJobs = { 'police' },
+        doorid = -1694920053,
+        objCoords  = vector3(3318.453125, -658.0032348632812, 44.8508186340332),
+        textCoords  = vector3(3318.453125, -658.0032348632812, 44.8508186340332),
+        objYaw = 59.9998550415039,
+        locked = true,
+        distance = 1.5
+    },
+	
+	-- --
 	-- -- Rhodes Sheriff Office
 	-- --
 
@@ -196,6 +279,4 @@ Config.DoorList = {
 			}
 		}
 	},
-
-
 }
